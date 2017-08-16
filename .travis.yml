@@ -9,7 +9,7 @@ python:
 install:
   - pip install cookiecutter
   - pip install invoke==0.14.0
-  - nvm install 6.10
-  - nvm use 6.10
+  - nvm install 8.2.0
+  - nvm use 8.2.0
 script:
   - invoke test
