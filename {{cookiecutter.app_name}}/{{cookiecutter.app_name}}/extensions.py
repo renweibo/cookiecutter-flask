@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Extensions module. Each extension is initialized in the app factory located in app.py."""
+from flask_babelex import Babel
 from flask_bcrypt import Bcrypt
 from flask_caching import Cache
 from flask_debugtoolbar import DebugToolbarExtension
@@ -17,3 +18,9 @@ migrate = Migrate()
 cache = Cache()
 debug_toolbar = DebugToolbarExtension()
 webpack = Webpack()
+babel = Babel()
+# @babel.localeselector
+# def get_locale():
+#     if request.args.get('lang'):
+#         session['lang'] = request.args.get('lang')
+#     return session.get('lang', 'zh_Hans_CN')

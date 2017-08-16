@@ -6,6 +6,10 @@ from {{cookiecutter.app_name}}.user.models import *
 from flask import url_for, redirect, request
 from flask_admin.contrib.sqla import ModelView
 
+from {{cookiecutter.app_name}}.data.admin_views import DataModelView
+from {{cookiecutter.app_name}}.data.models import Article
+
+
 
 class MyHomeView(AdminIndexView):
     @expose('/')
@@ -24,4 +28,6 @@ def register_admin(app):
     admin = Admin(app, name="管理后台",
                   template_mode='bootstrap3',
                   index_view=MyHomeView(name="首页"))
+    # admin.add_view(DataModelView(Article, db.session, name="数据1-文章", endpoint="article.admin", category="基本数据"))
+    admin.add_view(DataModelView(Article, db.session, name="文章", endpoint="article.admin"))
     admin.add_link(MenuLink(name='退出系统', url='/user/logout'))
