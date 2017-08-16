@@ -1,4 +1,7 @@
 # Everything needed in production
+tmuxp
+sh
+arrow
 
 # Flask
 Flask==0.12.2

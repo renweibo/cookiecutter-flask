@@ -1,0 +1,23 @@
+session_name: {{ cookiecutter.project_slug }}
+start_directory: "~/project/{{ cookiecutter.project_slug }}"
+shell_command_before:
+  - workon {{ cookiecutter.project_slug }}
+windows:
+- window_name: Server
+  layout: tiled
+  panes:
+    - shell_command:
+        - export FLASK_APP=./autoapp.py
+        - export FLASK_DEBUG=1
+        - npm start
+    - ls -lh database.db
+- window_name: DB
+  panes:
+    - echo flask db init/migrate/upgrade
+- window_name: Fabfile
+  panes:
+    - workon env2
+    - fab
+- window_name: Project
+  panes:
+    - echo Hello

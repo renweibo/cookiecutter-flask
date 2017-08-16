@@ -1,0 +1,17 @@
+session_name: {{ cookiecutter.project_slug }}
+start_directory: "~/{{ cookiecutter.project_slug }}"
+shell_command_before:
+  - workon {{ cookiecutter.project_slug }}
+windows:
+- window_name: Server
+  layout: tiled
+  panes:
+    - shell_command:
+        - export FLASK_APP=./autoapp.py
+        - export FLASK_DEBUG=0
+        - npm run build
+        - flask run
+    - ls -lh database.db
+- window_name: Project
+  panes:
+    - echo Hello
