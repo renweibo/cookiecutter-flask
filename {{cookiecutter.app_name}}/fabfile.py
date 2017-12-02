@@ -5,9 +5,9 @@ from fabtools import require
 import os
 
 env.use_ssh_config=True
-env.hosts = ['{{ cookiecutter.project_slug }}']
-pro_name = '{{ cookiecutter.project_slug }}'
-venv_path = '/home/ubuntu/.virtualenvs/{{ cookiecutter.project_slug }}'
+env.hosts = ['{{ cookiecutter.app_name }}']
+pro_name = '{{ cookiecutter.app_name }}'
+venv_path = '/home/ubuntu/.virtualenvs/{{ cookiecutter.app_name }}'
 pip_path = venv_path + '/bin/pip'
 package_path = venv_path + '/lib/python3.5/site-packages/'+pro_name
 python_path = venv_path + '/bin/python'
