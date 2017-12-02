@@ -9,15 +9,21 @@ windows:
     - shell_command:
         - export FLASK_APP=./autoapp.py
         - export FLASK_DEBUG=1
+        - load_nvm
+        - npm install
         - npm start
     - ls -lh database.db
 - window_name: DB
   panes:
-    - echo flask db init/migrate/upgrade
+    - shell_command:
+        - export FLASK_APP=./autoapp.py
+        - export FLASK_DEBUG=1
+        - echo flask db init/migrate/upgrade
 - window_name: Fabfile
   panes:
-    - workon env2
-    - fab
+    - shell_command:
+        - workon env2
+        - fab
 - window_name: Project
   panes:
     - echo Hello

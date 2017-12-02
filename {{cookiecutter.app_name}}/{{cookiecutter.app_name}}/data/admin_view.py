@@ -1,6 +1,7 @@
 from {{cookiecutter.app_name}}.common.admin_common import BaseModelView, updated_formatter, created_formatter
 from {{cookiecutter.app_name}}.data.models import *
 
+
 class DataModelView(BaseModelView):
     can_delete = True
     can_create = True

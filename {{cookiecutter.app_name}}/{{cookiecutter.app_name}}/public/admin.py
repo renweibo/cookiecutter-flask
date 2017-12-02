@@ -1,12 +1,13 @@
 from flask_admin import AdminIndexView, expose, Admin
 from flask_admin.menu import MenuLink
+from flask_login import current_user
 
 from {{cookiecutter.app_name}}.extensions import db
 from {{cookiecutter.app_name}}.user.models import *
 from flask import url_for, redirect, request
 from flask_admin.contrib.sqla import ModelView
 
-from {{cookiecutter.app_name}}.data.admin_views import DataModelView
+from {{cookiecutter.app_name}}.data.admin_view import DataModelView
 from {{cookiecutter.app_name}}.data.models import Article
 
 

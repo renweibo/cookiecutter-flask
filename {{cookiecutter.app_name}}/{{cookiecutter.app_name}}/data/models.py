@@ -1,5 +1,5 @@
 from sqlalchemy_utils import Timestamp
-from al_english.extensions import db
+from {{cookiecutter.app_name}}.extensions import db
 
 
 class Article(db.Model, Timestamp):
