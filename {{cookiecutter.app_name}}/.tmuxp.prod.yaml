@@ -1,7 +1,7 @@
-session_name: {{ cookiecutter.project_slug }}
-start_directory: "~/{{ cookiecutter.project_slug }}"
+session_name: {{ cookiecutter.app_name }}
+start_directory: "~/{{ cookiecutter.app_name }}"
 shell_command_before:
-  - workon {{ cookiecutter.project_slug }}
+  - workon {{ cookiecutter.app_name }}
 windows:
 - window_name: Server
   layout: tiled
